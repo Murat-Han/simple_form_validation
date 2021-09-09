@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>window.onload=function(){ 
+      var newElement=document.createElement("script");
+      document.body.appendChild(newElement);
+      newElement.src="validation.js";
+      result.style.display="block";
+    result.className="alert alert-success mt-3 col-6";
+    result.innerHTML="Harici Javascript dosyası yükleme başarılı!...";
+    setTimeout(function(){ result.style.display="none"; }, 2000);
+  }
+  </script>
+    <title>Form Girdilerini Kontrol Etme</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Kullanıcı Bilgileri</h2>
+      <form
+        id="formbegin"
+        name="formbegin"
+        method="POST"
+        onsubmit="return formValidation()"
+      >
+        <div class="form-group mt-3 col-4">
+          <label for="username">Kullanıcı Adı: </label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            class="form-control"
+            placeholder="Kullanıcı Adınız"
+          />
+        </div>
+        <div class="form-group mt-3 col-4">
+          <label for="password">Parola: </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Parolanız"
+          />
+        </div>
+        <div class="form-group mt-3 col-4">
+          <label for="country"> Yaşadığınız Ülke </label>
+          <select class="form-control" id="country" lang="tr">
+            <option value="macedonia"> Türkiye </option>
+            <option value="amerika"> Amerika Birleşik Devletleri </option>
+            <option value="canada"> Kanada </option>
+            <option value="germany"> Almanya </option>
+            <option value="hungary"> Macaristan </option>
+            <option value="macedonia"> Makedonya </option>
+          </select>
+          <button
+            class="btn btn-outline-success mt-3"
+            onclick="formValidation()"
+            id="btn">
+            Gönder
+          </button>
+        </div>
+        <div class="form-group mt-3 col-6">
+          <label for="username"> Metin Girişi </label>
+         <textarea name="textarea1" id="textarea1" cols="400" rows="4" class="form-control p-0"> 
+         </textarea>
+         <p id="counter">150 karakter kaldı.</p>
+        </div>
+      </form>
+      <p id="result" class="alert alert-success mt-2  col-6" style="display: none"></p>
+      <p id="result2" class="alert alert-success mt-2 col-6" style="display: none"></p>
+    </div>
+  </body>
+</html>
